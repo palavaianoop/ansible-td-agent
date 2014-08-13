@@ -1,0 +1,4 @@
+---
+# default vars for td_agent
+consul_enabled: false
+

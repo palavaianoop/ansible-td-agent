@@ -1,0 +1,8 @@
+---
+# tasks for td-agent
+- command: rpm --import http://packages.treasuredata.com/GPG-KEY-td-agent
+- template: src=./etc/yum.repos.d/td-agent.repo dest=/etc/yum.repos.d/td-agent.repo mode=0644 owner=root
+- yum: name=td-agent
+- service: name=td-agent state=started
+- file: src=./etc/consul.d/td-agent.repo dest=/etc/consul.d/td-agent.repo mode=0644 owner=root
+  when: consul_enabled
