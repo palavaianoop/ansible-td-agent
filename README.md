@@ -19,7 +19,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: tmtk75.td_agent }
+         - { role: tmtk75.td-agent }
 
 License
 -------

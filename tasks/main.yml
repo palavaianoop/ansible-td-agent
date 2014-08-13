@@ -4,5 +4,5 @@
 - template: src=./etc/yum.repos.d/td-agent.repo dest=/etc/yum.repos.d/td-agent.repo mode=0644 owner=root
 - yum: name=td-agent
 - service: name=td-agent state=started
-- file: src=./etc/consul.d/td-agent.repo dest=/etc/consul.d/td-agent.repo mode=0644 owner=root
+- file: src=./etc/consul.d/td-agent.json dest=/etc/consul.d/td-agent.json mode=0644 owner=root
   when: consul_enabled
