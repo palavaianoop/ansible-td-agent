@@ -10,5 +10,3 @@
 
 - file: src=./etc/consul.d/td-agent.json dest=/etc/consul.d/td-agent.json mode=0644 owner=root
   when: consul_enabled
-  notify:
-    - restart consul
