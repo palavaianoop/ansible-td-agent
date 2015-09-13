@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "td-agent",
+    "tags": [],
+    "port": {{ service_port }},
+    "check": {
+      "script": "curl localhost:{{ service_port }} >/dev/null 2>&1",
+      "interval": "{{ service_check_interval }}"
+    }
+  }
+}

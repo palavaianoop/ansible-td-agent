@@ -1,4 +1,6 @@
 ---
 # default vars for td_agent
 consul_enabled: false
+service_port: 24224
+service_check_interval: "5s"
 
