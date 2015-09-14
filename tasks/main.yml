@@ -4,24 +4,29 @@
   command: rpm --import http://packages.treasuredata.com/GPG-KEY-td-agent
   tags:
   - td-agent
+  - td-agent.gpg
 
 - name: td-agent.repo
   template: src=./etc/yum.repos.d/td-agent.repo dest=/etc/yum.repos.d/td-agent.repo mode=0644 owner=root
   tags:
   - td-agent
+  - td-agent.repo
 
 - name: yum
   yum: name=td-agent
   tags:
   - td-agent
+  - td-agent.yum
 
 - name: service
   service: name=td-agent state=started
   tags:
   - td-agent
+  - td-agent.service
 
 - name: consul.d/td-agent.json
   template: src=./etc/consul.d/td-agent.json dest=/etc/consul.d/td-agent.json mode=0644 owner=root
   when: consul_enabled
   tags:
   - td-agent
+  - td-agent.consul
